@@ -13,7 +13,7 @@ $ yarn build
 $ yarn start
 ```
 
-Open [GraphQL Playground](http://localhost:4000/graphql) in your browser.
+Open [GraphQL Playground](http://localhost:4000/graphql) in your browser. Use following gql operations and query variable in playground.
 
 Documentation, operations can be found in the DOCS panel in playground.
 
