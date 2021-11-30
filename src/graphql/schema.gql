@@ -1,0 +1,74 @@
+scalar Vin
+
+type Customer {
+  name: String!
+  email: String!
+  phone: String!
+}
+
+input CustomerInput {
+  name: String!
+  email: String!
+  phone: String!
+}
+
+type Vehicle {
+  make: String!
+  model: String!
+  vin: Vin!
+}
+
+input VehicleInput {
+  make: String!
+  model: String!
+  vin: Vin!
+}
+
+type Booking {
+  id: ID!
+  """
+  ISO dateTime string
+  """
+  dateTime: String!
+  vehicle: Vehicle!
+  customer: Customer!
+}
+
+input BookTimeInput {
+  """
+  YYYY-MM-DD
+  """
+  date: String!
+  """
+  24 hour time format
+  """
+  time: Int!
+}
+
+input BookingInput {
+  customer: CustomerInput!
+  vehicle: VehicleInput!
+  booking: BookTimeInput!
+}
+
+type Query {
+  """
+  search booking using date
+  """
+  getBookingByDate(date: String!): [Booking]
+  """
+  search booking using vin
+  """
+  getBookingByVin(vin: Vin!): [Booking]
+}
+
+type Mutation {
+  """
+  update booking capacity. default: 2
+  """
+  updateCapacity(capacity: Int!): Int
+  """
+  create new booking
+  """
+  createBooking(input: BookingInput!): Booking
+}
