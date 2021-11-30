@@ -1,7 +1,7 @@
 {
-  "name": "homelike",
+  "name": "volvo",
   "version": "1.0.0",
-  "description": "homelike assignment",
+  "description": "volvo vehicle service booking",
   "scripts": {
     "start": "node ./dist/app.js",
     "dev": "babel-watch ./src/app.js",
